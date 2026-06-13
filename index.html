@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Evaluación Técnica | Ágora Centro Educativo</title>
+    <title>Simulacro de Examen Ceneval | Ágora Centro Educativo</title>
     <style>
         :root {
             --primary: #593276;    /* Morado Ágora */
@@ -151,14 +151,13 @@
         <div class="brand-section">
             <img src="logo-agora.png" alt="Ágora Centro Educativo" class="logo-institucional">
             <div>
-                <h3 style="margin:0; color: var(--primary); font-size: 1.3rem;">Evaluación de Simulación Avanzada</h3>
-                <small style="color: var(--secondary); font-weight: 600; letter-spacing: 0.5px;">EXANI-II | PERFIL: PREMEDICINA</small>
+                <h3 style="margin:0; color: var(--primary); font-size: 1.3rem;">Simulacro de examen para ingreso a universidad</h3>
+                <small style="color: var(--secondary); font-weight: 600; letter-spacing: 0.5px;">EXANI-II | ÁREA DE CIENCIAS DE LA SALUD</small>
             </div>
         </div>
         <div id="timer" class="timer">120:00</div>
     </div>
 
-    <!-- Interfaz del Examen -->
     <div id="quiz-wrapper">
         <div class="progress">Reactivo <span id="current-index">1</span> de <span id="total-questions">120</span></div>
         <div id="question-container"></div>
@@ -169,7 +168,6 @@
         </div>
     </div>
 
-    <!-- Interfaz de Resultados y Retroalimentación -->
     <div id="results">
         <h2 style="color: var(--primary); text-align: center;">Resultados Consolidados</h2>
         <p style="text-align: center;">El folio ha sido procesado por la dirección académica de Ágora Centro Educativo Integral.</p>
@@ -188,807 +186,172 @@
 	    
 const reactivos = [
     // =========================================================================
-    // ÁREA: PREMEDICINA (ANATOMÍA, FISIOLOGÍA Y BIOLOGÍA CELULAR)
+    // MÓDULO: CIENCIAS DE LA SALUD (ANATOMÍA, FISIOLOGÍA, BIOLOGÍA Y SALUD PÚBLICA)
     // =========================================================================
     {
-        q: "¿Cuál es el orgánulo celular encargado de la síntesis de proteínas a partir de la información genética contenida en el ARN mensajero?",
-        options: ["A) Lisosoma", "B) Ribosoma", "C) Aparato de Golgi"],
-        correct: 1,
-        explanation: "Retroalimentación: Los ribosomas son los complejos macromoleculares responsables de la traducción del ARNm a cadenas de aminoácidos (proteínas)."
-    },
-    {
-        q: "Un paciente acude a urgencias con dolor agudo en la fosa ilíaca derecha, náuseas y fiebre. ¿Qué órgano del aparato digestivo es más probable que se encuentre inflamado?",
-        options: ["A) El bazo", "B) El apéndice cecal", "C) El sigmoides"],
-        correct: 1,
-        explanation: "Retroalimentación: El apéndice se localiza en la fosa ilíaca derecha (cuadrante inferior derecho). Su inflamación (apendicitis) provoca dolor característico en esa zona."
-    },
-    {
-        q: "¿Qué vaso sanguíneo transporta sangre desoxigenada desde el ventrículo derecho del corazón hacia los pulmones para su posterior oxigenación?",
-        options: ["A) Arteria pulmonar", "B) Vena pulmonar", "C) Arteria aorta"],
+        q: "¿Cuál de las siguientes estructuras del sistema de conducción cardíaco actúa como el marcapasos natural del corazón, originando el impulso eléctrico en condiciones normales?",
+        options: ["A) Nodo sinoauricular (SA)", "B) Nodo auriculoventricular (AV)", "C) Haz de His"],
         correct: 0,
-        explanation: "Retroalimentación: La arteria pulmonar es la única arteria del cuerpo que transporta sangre carboxigenada (desoxigenada) hacia los pulmones para el intercambio gaseoso."
+        explanation: "Retroalimentación: El nodo sinoauricular (situado en la aurícula derecha) autogenera impulsos rítmicos a una frecuencia de 60-100 veces por minuto, funcionando como el marcapasos fisiológico primario."
     },
     {
-        q: "Tipo de tejido conectivo especializado que carece de vasos sanguíneos y nervios (es avascular), cuya nutrición se realiza por difusión pasiva a través del pericondrio.",
-        options: ["A) Tejido óseo", "B) Tejido cartilaginoso", "C) Tejido adiposo"],
+        q: "Un paciente presenta una lesión en el lóbulo occipital del cerebro debido a un traumatismo. ¿Qué función sensorial se verá afectada principalmente?",
+        options: ["A) La audición y el equilibrio", "B) La percepción visual", "C) La corteza somatosensorial táctil"],
         correct: 1,
-        explanation: "Retroalimentación: El cartílago es avascular, por lo que su reparación es lenta y depende de los nutrientes que difunden desde los tejidos circundantes."
+        explanation: "Retroalimentación: El lóbulo occipital alberga la corteza visual primaria y de asociación; por ende, cualquier lesión en esta región compromete directamente la visión."
     },
     {
-        q: "¿Cómo se denomina al proceso fisiológico mediante el cual el organismo mantiene un ambiente interno estable y en equilibrio dinámico frente a las variaciones del exterior?",
-        options: ["A) Homeostasis", "B) Hematosis", "C) Glucólisis"],
-        correct: 0,
-        explanation: "Retroalimentación: La homeostasis engloba los mecanismos de autorregulación (como la temperatura o el pH) que mantienen estables las condiciones internas del cuerpo."
-    },
-    {
-        q: "Fase de la profase I meiótica en la cual ocurre el fenómeno de entrecruzamiento (crossing-over), permitiendo la recombinación genética entre cromosomas homólogos.",
-        options: ["A) Leptoteno", "B) Paquiteno", "C) Diacinesis"],
+        q: "¿En qué fase de la mitosis celular los cromosomas homólogos se alinean de manera exacta en el plano ecuatorial del huso acromático?",
+        options: ["A) Profase", "B) Metafase", "C) Anafase"],
         correct: 1,
-        explanation: "Retroalimentación: Durante el paquiteno, las cromátides homólogas no hermanas se entrelazan de forma estrecha y se intercambian fragmentos de material genético."
+        explanation: "Retroalimentación: La metafase se caracteriza por la alineación de los cromosomas en la placa ecuatorial o media de la célula antes de dividirse."
     },
     {
-        q: "¿Qué estructura anatómica del sistema respiratorio se encarga de cerrar el paso a las vías aéreas durante la deglución para evitar que los alimentos ingresen a la laringe?",
-        options: ["A) Epiglotis", "B) Clicoides", "C) Faringe"],
-        correct: 0,
-        explanation: "Retroalimentación: La epiglotis es un cartílago con forma de hoja que funciona como una compuerta, desviando el bolo alimenticio hacia el esófago."
-    },
-    {
-        q: "Un nivel elevado de la hormona adrenocorticotropa (ACTH) en la sangre estimulará directamente la secreción de qué sustancia en la corteza suprarrenal?",
-        options: ["A) Cortisol", "B) Adrenalina", "C) Insulina"],
-        correct: 0,
-        explanation: "Retroalimentación: La ACTH (producida por la hipófisis) regula de forma directa la producción de glucocorticoides como el cortisol en la corteza de las glándulas suprarrenales."
-    },
-
-    // =========================================================================
-    // ÁREA: PENSAMIENTO MATEMÁTICO (ÁLGEBRA, ESTADÍSTICA Y GEOMETRÍA)
-    // =========================================================================
-    {
-        q: "Si la variable 'y' es directamente proporcional al cuadrado de 'x', y sabemos que cuando x = 3, y = 36. ¿Cuál será el valor de 'y' cuando x = 5?",
-        options: ["A) 60", "B) 100", "C) 144"],
+        q: "Dentro de la Historia Natural de la Enfermedad, ¿en qué período ocurren los cambios tisulares, bioquímicos y celulares antes de que el paciente manifieste los primeros síntomas clínicos?",
+        options: ["A) Período prepatogénico", "B) Período subclínico (dentro del patogénico)", "C) Período de resolución"],
         correct: 1,
-        explanation: "Retroalimentación: Al ser proporcional al cuadrado, la ecuación es y = k * x². Sustituyendo los datos: 36 = k * (3²) -> 36 = 9k -> k = 4. Para x = 5: y = 4 * (5²) = 4 * 25 = 100."
+        explanation: "Retroalimentación: El período subclínico o de incubación/latencia forma parte del período patogénico. En él ya hay interacción con el agente y daños celulares, pero por debajo del horizonte clínico."
     },
     {
-        q: "Un estudiante obtuvo las siguientes calificaciones parciales en premedicina: 7, 8, 9, 10, 6. Si el examen final cuenta el doble que un parcial, ¿qué calificación mínima necesita en el final para promediar 8.5?",
-        options: ["A) 9.5", "B) 10", "C) 9"],
-        correct: 0,
-        explanation: "Retroalimentación: Los parciales suman 7+8+9+10+6 = 40 (valen 5 notas). El final vale por 2 notas (Total = 7 notas). Para un promedio de 8.5 se requiere una suma total de 8.5 * 7 = 59.5. Restando los parciales: 59.5 - 40 = 19.5 puntos necesarios en el final. Como vale doble, se divide entre 2: 19.5 / 2 = 9.75 (redondeado a 9.5 en las opciones viables)."
-    },
-    {
-        q: "¿Cuál es el valor de la pendiente de una recta que pasa por los puntos coordenados A(2, 3) y B(6, 11)?",
-        options: ["A) m = 2", "B) m = 4", "C) m = 0.5"],
-        correct: 0,
-        explanation: "Retroalimentación: Pendiente m = (y2 - y1) / (x2 - x1). Sustituyendo: m = (11 - 3) / (6 - 2) = 8 / 4 = 2."
-    },
-    {
-        q: "Determine el rango intercuartílico del siguiente conjunto ordenado de datos clínicos que miden la estancia hospitalaria en días: 2, 3, 5, 6, 8, 9, 11, 12.",
-        options: ["A) 10", "B) 6", "C) 5"],
-        correct: 1,
-        explanation: "Retroalimentación: Q1 es el promedio de 3 y 5 (4). Q3 es el promedio de 9 y 11 (10). Rango intercuartílico = Q3 - Q1 = 10 - 4 = 6."
-    },
-    {
-        q: "Resuelva la siguiente operación con polinomios para simplificar los términos semejantes: 3(x² - 2x) - 2(2x² - 3x)",
-        options: ["A) -x²", "B) -x² - 12x", "C) x² - 6x"],
-        correct: 0,
-        explanation: "Retroalimentación: Multiplicando: 3x² - 6x - 4x² + 6x. Al agrupar: (3x² - 4x²) = -x²; y (-6x + 6x) = 0. Resultado: -x²."
-    },
-    {
-        q: "En una muestra probabilística de 200 personas de la tercera edad, 80 reportaron problemas visuales. Si extrapolamos este comportamiento a una población de 5,000 personas, ¿cuántas se espera que tengan problemas visuales?",
-        options: ["A) 1,500", "B) 2,000", "C) 2,500"],
-        correct: 1,
-        explanation: "Retroalimentación: Proporción = 80/200 = 0.4 (40%). Aplicando a la población total: 5,000 * 0.4 = 2,000 personas."
-    },
-    {
-        q: "Un contenedor cilíndrico de oxígeno médico tiene un radio de base de 10 cm y una altura de 50 cm. Calcule su volumen aproximado utilizando el valor de pi como 3.14.",
-        options: ["A) 15,700 cm³", "B) 3,140 cm³", "C) 7,850 cm³"],
-        correct: 0,
-        explanation: "Retroalimentación: V = pi * r² * h. Sustituyendo: V = 3.14 * (10²) * 50 = 3.14 * 100 * 50 = 314 * 50 = 15,700 cm³."
-    },
-
-    // =========================================================================
-    // ÁREA: COMPRESIÓN LECTORA (INFERENCIAL, CRÍTICA Y LITERAL)
-    // =========================================================================
-    {
-        passage: "TEXTO 1: A lo largo del siglo XX, la medicina alopática consolidó su hegemonía gracias al desarrollo de los antibióticos y las vacunas, reduciendo drásticamente la mortalidad por enfermedades infectocontagiosas. Sin embargo, este enfoque predominantemente reduccionista y centrado en el síntoma ha comenzado a mostrar fisuras ante el auge de las patologías crónico-degenerativas. El sedentarismo, el estrés urbano y las dietas procesadas demandan hoy un paradigma médico preventivo e integrativo, que evalúe al individuo como un sistema complejo y no como un conjunto aislado de órganos enfermos.",
-        q: "De acuerdo con el Texto 1, ¿cuál es el factor principal que expone las limitaciones del modelo médico actual?",
-        options: ["A) El desinterés de la población por las vacunas y los antibióticos modernos.", "B) El incremento exponencial de enfermedades ligadas al estilo de vida contemporáneo.", "C) La falta de financiamiento público en los laboratorios de investigación."],
-        correct: 1,
-        explanation: "Retroalimentación: El texto indica que el enfoque tradicional muestra 'fisuras ante el auge de las patologías crónico-degenerativas' provocadas por el sedentarismo y la mala alimentación."
-    },
-    {
-        passage: "TEXTO 1: A lo largo del siglo XX, la medicina alopática consolidó su hegemonía gracias al desarrollo de los antibióticos y las vacunas, reduciendo drásticamente la mortalidad por enfermedades infectocontagiosas. Sin embargo, este enfoque predominantemente reduccionista y centrado en el síntoma ha comenzado a mostrar fisuras ante el auge de las patologías crónico-degenerativas. El sedentarismo, el estrés urbano y las dietas procesadas demandan hoy un paradigma médico preventivo e integrativo, que evalúe al individuo como un sistema complejo y no como un conjunto aislado de órganos enfermos.",
-        q: "¿Qué sentido semántico adquiere la frase 'enfoque predominantemente reduccionista' dentro del fragmento anterior?",
-        options: ["A) Una práctica que busca disminuir los costos económicos del tratamiento.", "B) Una visión que simplifica la enfermedad al análisis del síntoma o parte aislada.", "C) Un método obsoleto que rechaza el uso de tecnología avanzada."],
-        correct: 1,
-        explanation: "Retroalimentación: El término 'reduccionista' se contrapone al final con 'sistema complejo', indicando que el modelo actual fragmenta el análisis corporal de forma aislada."
-    },
-    {
-        passage: "TEXTO 2: El descubrimiento de la penicilina por Alexander Fleming en 1928 suele catalogarse como un accidente fortuito. No obstante, la serendipia solo favorece a las mentes preparadas. Fleming no buscaba un antibiótico; observó con agudeza que una contaminación por hongo en sus placas de cultivo había destruido a las bacterias circundantes. El verdadero mérito no radicó en el error del cultivo, sino en su capacidad analítica para descifrar el significado de la zona de inhibición.",
-        q: "Seleccione la idea central implícita que defiende el autor del Texto 2.",
-        options: ["A) La suerte y el azar son los únicos motores de la innovación científica.", "B) La investigación médica requiere de un estricto orden higiénico para evitar contaminaciones.", "C) Los hallazgos fortuitos requieren de observación crítica y preparación previa para concretarse."],
-        correct: 2,
-        explanation: "Retroalimentación: El texto enfatiza que la 'serendipia solo favorece a las mentes preparadas' y que el valor de Fleming estuvo en su capacidad analítica, no en el accidente."
-    },
-
-    // =========================================================================
-    // ÁREA: REDACCIÓN INDIRECTA (GRAMÁTICA Y ORTOGRAFÍA)
-    // =========================================================================
-    {
-        q: "Seleccione la opción que complete correctamente los espacios en blanco respetando las normas gramaticales de concordancia:\nLa mayoría de las muestras de laboratorio ________ analizadas a tiempo, aunque una parte de ellas ________ dañada durante el traslado.",
-        options: ["A) fueron - resultó", "B) fue - resultaron", "C) fueron - resultaron"],
-        correct: 0,
-        explanation: "Retroalimentación: 'La mayoría de las muestras' admite la concordancia ad sensum en plural ('fueron'). 'Una parte' (sustantivo colectivo) concuerda con el verbo en singular ('resultó') para mantener la cohesión."
-    },
-    {
-        q: "Identifique cuál de los siguientes enunciados incurre en un error ortográfico de grafías (grafemas c, s, z, x).",
-        options: ["A) El cirujano tuvo que hacer una incisión precisa en la zona afectada.", "B) La escaséz de insumos médicos retrasó los procedimientos programados.", "C) Es indispensable concientizar a la población sobre los riesgos del tabaquismo."],
-        correct: 1,
-        explanation: "Retroalimentación: La palabra 'escasez' es un sustantivo abstracto derivado de un adjetivo y se escribe con 'z' al final, no con 'z' acentuada o 's'. Además, los sustantivos agudos terminados en z no llevan tilde."
-    },
-    {
-        q: "Elija la opción que tenga una redacción formal, clara y concisa, ideal para la bitácora de un expediente clínico.",
-        options: ["A) El paciente ingresó medio inconsciente pidiendo cosas de tomar a cada rato.", "B) El paciente ingresó en estado de estupor leve y manifestó polidipsia recurrente.", "C) El paciente entró bien grave y con una sed que no se le quitaba con nada."],
-        correct: 1,
-        explanation: "Retroalimentación: La opción B utiliza terminología médica adecuada ('estupor leve', 'polidipsia') y mantiene un registro lingüístico formal apto para un entorno clínico profesional."
-    },
-    {
-        q: "Identifique la oración que utiliza de manera correcta los signos de puntuación para separar incisos o explicaciones.",
-        options: ["A) El tratamiento, a pesar de sus efectos secundarios, es la mejor opción para el paciente.", "B) El tratamiento a pesar de sus efectos secundarios es, la mejor opción para el paciente.", "C) El tratamiento, a pesar de sus efectos secundarios es la mejor opción, para el paciente."],
-        correct: 0,
-        explanation: "Retroalimentación: La frase 'a pesar de sus efectos secundarios' funciona como un inciso explicativo o circunstancial, por lo que debe ir completamente aislado entre comas."
-    },
-
-    // =========================================================================
-    // ÁREA: PREMEDICINA (SALUD PÚBLICA Y EPIDEMIOLOGÍA)
-    // =========================================================================
-    {
-        q: "¿Cuál es el indicador epidemiológico que mide el número de casos nuevos de una enfermedad específica que aparecen en una población durante un período determinado?",
-        options: ["A) Prevalencia", "B) Incidencia", "C) Letalidad"],
-        correct: 1,
-        explanation: "Retroalimentación: La incidencia contabiliza los casos nuevos, permitiendo evaluar la velocidad de propagación. La prevalencia mide los casos totales (nuevos y antiguos)."
-    },
-    {
-        q: "Un médico general realiza pláticas sobre métodos anticonceptivos y distribución de preservativos en una preparatoria local. ¿En qué nivel de prevención se encuentra esta acción?",
-        options: ["A) Prevención primaria", "B) Prevención secundaria", "C) Prevención terciaria"],
-        correct: 0,
-        explanation: "Retroalimentación: Se trata de prevención primaria (promoción de la salud y protección específica) debido a que se actúa antes de que aparezca una condición o enfermedad."
-    },
-    {
-        q: "¿Qué componente de la célula eucariota es un sistema membranoso encargado de la detoxificación celular (como la inactivación de fármacos y toxinas en los hepatocitos)?",
-        options: ["A) Retículo endoplásmico rugoso", "B) Retículo endoplásmico liso", "C) Ribosomas libres"],
-        correct: 1,
-        explanation: "Retroalimentación: El retículo endoplásmico liso (REL) se encarga de la síntesis de lípidos y de los procesos de detoxificación en órganos como el hígado."
-    },
-    {
-        q: "De acuerdo con la terminología anatómica de posición, ¿cómo se describe a una estructura que se encuentra más cercana a la línea media del cuerpo?",
-        options: ["A) Lateral", "B) Medial", "C) Proximal"],
-        correct: 1,
-        explanation: "Retroalimentación: El término 'medial' señala que una estructura se aproxima o sitúa hacia el plano sagital medio del organismo."
-    },
-    {
-        q: "Proceso metabólico anaeróbico que se lleva a cabo en el citosol celular, mediante el cual una molécula de glucosa se descompone en dos moléculas de piruvato, produciendo una ganancia neta de 2 ATP.",
-        options: ["A) Ciclo de Krebs", "B) Glucólisis", "C) Cadena de transporte de electrones"],
-        correct: 1,
-        explanation: "Retroalimentación: La glucólisis ocurre en el citoplasma sin necesidad de oxígeno, transformando la glucosa en piruvato con liberación de energía neta."
-    },
-    {
-        q: "Un paciente muestra una deficiencia absoluta en la producción de células de la línea mieloide debido a un fallo medular. ¿Cuál de los siguientes elementos sanguíneos NO se verá afectado de forma directa?",
-        options: ["A) Eritrocitos", "B) Linfocitos T", "C) Plaquetas"],
-        correct: 1,
-        explanation: "Retroalimentación: Los linfocitos T derivan de la línea linfoide, mientras que los eritrocitos, plaquetas y granulocitos se originan de la línea mieloide."
-    },
-    {
-        q: "¿Qué tipo de articulación del cuerpo humano se caracteriza por permitir una amplia libertad de movimiento en múltiples ejes (articulaciones móviles con cápsula articular y líquido sinovial)?",
-        options: ["A) Sinartrosis", "B) Anfiartrosis", "C) Diartrosis"],
-        correct: 2,
-        explanation: "Retroalimentación: Las diartrosis o articulaciones sinoviales (como el hombro o la cadera) son las articulaciones más móviles y complejas del sistema esquelético."
-    },
-    {
-        q: "¿Cuál es el principal ion intracelular del cuerpo humano, fundamental para el mantenimiento del potencial de membrana en reposo de las células excitables?",
-        options: ["A) Sodio (Na+)", "B) Potasio (K+)", "C) Calcio (Ca2+)"],
-        correct: 1,
-        explanation: "Retroalimentación: El potasio (K+) es el catión más abundante dentro de la célula (intracelular), mientras que el sodio (Na+) predomina en el espacio extracelular."
-    }
-// =========================================================================
-    // ÁREA: PREMEDICINA (ANATOMÍA Y FISIOLOGÍA SISTÉMICA)
-    // =========================================================================
-    {
-        q: "¿Cuál es la función principal de la vaina de mielina que recubre el axón de ciertas neuronas en el sistema nervioso?",
-        options: ["A) Producir los neurotransmisores químicos de la sinapsis", "B) Aislar el axón para incrementar la velocidad de conducción del impulso eléctrico", "C) Almacenar glucógeno para nutrir el cuerpo celular"],
-        correct: 1,
-        explanation: "Retroalimentación: La mielina actúa como aislante eléctrico. Permite que el potencial de acción se propague de forma saltatoria entre los nódulos de Ranvier, aumentando drásticamente la velocidad del impulso."
-    },
-    {
-        q: "Un paciente presenta ictericia (coloración amarillenta de piel y mucosas) debida a una obstrucción del conducto colédoco. ¿Qué sustancia se está acumulando en su sangre?",
-        options: ["A) Albúmina", "B) Bilirrubina", "C) Urea"],
-        correct: 1,
-        explanation: "Retroalimentación: El colédoco transporta la bilis desde el hígado y la vesícula al duodeno. Si se obstruye, la bilirrubina no se excreta y pasa al torrente sanguíneo, tiñendo los tejidos de amarillo."
-    },
-    {
-        q: "¿Qué glándula endocrina secreta la hormona paratohormona (PTH), encargada de elevar los niveles de calcio plasmático mediante la reabsorción ósea?",
-        options: ["A) Glándulas paratiroides", "B) Glándula tiroides", "C) Adenohipófisis"],
-        correct: 0,
-        explanation: "Retroalimentación: Las cuatro glándulas paratiroides producen la PTH en respuesta a la hipocalcemia, estimulando a los osteoclastos para liberar calcio del hueso a la sangre."
-    },
-    {
-        q: "¿Cuál es la enzima nuclear encargada de sintetizar una cadena de ARN mensajero utilizando como molde una de las hebras del ADN durante la transcripción?",
-        options: ["A) ADN polimerasa", "B) ARN polimerasa", "C) ADN ligasa"],
-        correct: 1,
-        explanation: "Retroalimentación: La ARN polimerasa lee el molde de ADN de 3' a 5' y sintetiza el transcrito primario de ARN en dirección 5' a 3'."
-    },
-    {
-        q: "¿Qué tipo de células óseas maduras se localizan en las lagunas de la matriz extracelular calcificada y se encargan del mantenimiento del tejido óseo diario?",
-        options: ["A) Osteoblastos", "B) Osteoclastos", "C) Osteocitos"],
-        correct: 2,
-        explanation: "Retroalimentación: Los osteocitos son las células maduras atrapadas en la matriz. Los osteoblastos forman hueso nuevo y los osteoclastos lo reabsorben o destruyen."
-    },
-    {
-        q: "¿Qué sustancia tensioactiva es secretada por los neumocitos tipo II en los alvéolos pulmonares para evitar el colapso alveolar durante la espiración?",
-        options: ["A) Factor surfactante", "B) Mucina", "C) Hemoglobina"],
-        correct: 0,
-        explanation: "Retroalimentación: El factor surfactante reduce la tensión superficial en la interfase aire-líquido del alvéolo, manteniéndolo abierto al exhalar."
-    },
-    {
-        q: "En un trazo electrocardiográfico normal, ¿qué evento mecánico del corazón se correlaciona de forma directa con la aparición del complejo QRS?",
-        options: ["A) Despolarización auricular", "B) Despolarización ventricular", "C) Repolarización ventricular"],
-        correct: 1,
-        explanation: "Retroalimentación: El complejo QRS representa la corriente eléctrica que recorre los ventrículos (despolarización) justo antes de su contracción mecánica o sístole."
-    },
-    {
-        q: "Cuando una enfermedad infecciosa mantiene una presencia constante y un número de casos esperado dentro de una región geográfica delimitada a lo largo del tiempo, se define como:",
-        options: ["A) Epidemia", "B) Endemia", "C) Pandemia"],
-        correct: 1,
-        explanation: "Retroalimentación: La endemia es la presencia habitual de una enfermedad en una zona. La epidemia es un aumento inusual y repentino, y la pandemia se extiende por múltiples países."
-    },
-
-    // =========================================================================
-    // ÁREA: PENSAMIENTO MATEMÁTICO
-    // =========================================================================
-    {
-        q: "Determine el valor del discriminante de la ecuación cuadrática 2x² - 4x + 3 = 0 y defina la naturaleza de sus raíces.",
-        options: ["A) D = -8; dos raíces complejas/imaginarias", "B) D = 8; dos raíces reales y diferentes", "C) D = 0; una única raíz real"],
-        correct: 0,
-        explanation: "Retroalimentación: Discriminante D = b² - 4ac. Evaluando: (-4)² - 4(2)(3) = 16 - 24 = -8. Al ser un valor negativo, las raíces no son reales sino complejas."
-    },
-    {
-        q: "Se lanza un dado convencional de 6 caras. ¿Cuál es la probabilidad teórica de obtener un número que sea primo y a la vez par?",
-        options: ["A) 3/6", "B) 1/6", "C) 2/6"],
-        correct: 1,
-        explanation: "Retroalimentación: Los números del dado son {1, 2, 3, 4, 5, 6}. Los primos son {2, 3, 5}. El único número primo que también es par es el 2. Es 1 caso favorable de 6 totales: 1/6."
-    },
-    {
-        q: "Un poste de luz proyecta una sombra de 6 metros en el suelo. Al mismo tiempo, el ángulo de elevación desde la punta de la sombra hasta la punta del poste es de 45°. ¿Cuál es la altura del poste?",
-        options: ["A) 6 metros", "B) 8.4 metros", "C) 3 metros"],
-        correct: 0,
-        explanation: "Retroalimentación: Usando la función tangente: Tan(45°) = Cateto Opuesto (altura) / Cateto Adyacente (sombra). Como Tan(45°) = 1, entonces 1 = Altura / 6, por lo que Altura = 6 metros."
-    },
-    {
-        q: "Calcule la desviación media del siguiente conjunto de puntuaciones diagnósticas: 5, 7, 9. (Nota: La media aritmética del conjunto es 7).",
-        options: ["A) 2", "B) 1.33", "C) 0"],
-        correct: 1,
-        explanation: "Retroalimentación: Desviaciones absolutas respecto a la media (7): |5-7|=2; |7-7|=0; |9-7|=2. Suma de desviaciones = 2+0+2 = 4. Dividiendo entre el número de datos (3): 4 / 3 = 1.33."
-    },
-    {
-        q: "¿Cuál es el dominio de la función matemática real f(x) = √(x - 4)?",
-        options: ["A) Todos los números reales mayores o iguales a 4", "B) Todos los números reales menores a 4", "C) Todos los reales excepto el 4"],
-        correct: 0,
-        explanation: "Retroalimentación: Para que una raíz cuadrada tenga solución real, su radicando debe ser mayor o igual a cero: x - 4 >= 0 -> x >= 4. El dominio va de [4, infinito)."
-    },
-    {
-        q: "Un equipo médico cuesta $20,000 pesos. Si se le aplica un primer descuento del 10% y, sobre el precio ya rebajado, se otorga otro 5% de descuento adicional, ¿cuál es el precio final de compra?",
-        options: ["A) $17,000", "B) $17,100", "C) $17,200"],
-        correct: 1,
-        explanation: "Retroalimentación: Con el 10%, el precio baja a $18,000 (20,000 * 0.90). Aplicando el 5% a $18,000: 18,000 * 0.95 = $17,100."
-    },
-    {
-        q: "Encuentre el conjunto solución para la siguiente desigualdad lineal: 3x - 5 > 7",
-        options: ["A) x > 4", "B) x < 4", "C) x > 0.66"],
-        correct: 0,
-        explanation: "Retroalimentación: Despejando la variable x: 3x > 7 + 5 -> 3x > 12 -> x > 12 / 3 -> x > 4."
-    },
-
-    // =========================================================================
-    // ÁREA: COMPRESIÓN LECTORA
-    // =========================================================================
-    {
-        passage: "TEXTO 2: El uso de la telemedicina experimentó una expansión sin precedentes a raíz de las restricciones de movilidad global. Lo que inicialmente emergió como un mecanismo paliativo de emergencia para contener los contagios intrahospitalarios se ha consolidado como una modalidad asistencial permanente. La consulta remota optimiza los tiempos de espera y reduce los costos operativos tanto para las instituciones como para los pacientes crónicos; sin embargo, este ecosistema virtual enfrenta el reto insoslayable de la brecha digital en comunidades rurales, donde la falta de conectividad e infraestructura perpetúa la exclusión sanitaria.",
-        q: "De acuerdo con el Texto 2, la telemedicina presenta un obstáculo crítico que limita su cobertura universal. Este es:",
-        options: ["A) La falta de efectividad diagnóstica en comparación con las videollamadas convencionales.", "B) Las desigualdades socioeconómicas expresadas en la falta de conectividad tecnológica rural.", "C) El rechazo generalizado de los médicos especialistas a utilizar plataformas virtuales."],
-        correct: 1,
-        explanation: "Retroalimentación: El texto menciona de forma explícita que el ecosistema se enfrenta al 'reto insoslayable de la brecha digital en comunidades rurales'."
-    },
-    {
-        passage: "TEXTO 2: El uso de la telemedicina experimentó una expansión sin precedentes a raíz de las restricciones de movilidad global. Lo que inicialmente emergió como un mecanismo paliativo de emergencia para contener los contagios intrahospitalarios se ha consolidado como una modalidad asistencial permanente. La consulta remota optimiza los tiempos de espera y reduce los costos operativos tanto para las instituciones como para los pacientes crónicos; sin embargo, este ecosistema virtual enfrenta el reto insoslayable de la brecha digital en comunidades rurales, donde la falta de conectividad e infraestructura perpetúa la exclusión sanitaria.",
-        q: "A partir de la lógica del texto, la palabra 'insoslayable' puede sustituirse sin perder el sentido original por el sinónimo:",
-        options: ["A) Inevitable", "B) Accesible", "C) Prescindible"],
-        correct: 0,
-        explanation: "Retroalimentación: Algo 'insoslayable' es aquello que no se puede eludir, esquivar o evitar; por ende, 'inevitable' u 'obligatorio' preserva perfectamente la cohesión."
-    },
-    {
-        passage: "TEXTO 2: El uso de la telemedicina experimentó una expansión sin precedentes a raíz de las restricciones de movilidad global. Lo que inicialmente emergió como un mecanismo paliativo de emergencia para contener los contagios intrahospitalarios se ha consolidado como una modalidad asistencial permanente. La consulta remota optimiza los tiempos de espera y reduce los costos operativos tanto para las instituciones como para los pacientes crónicos; sin embargo, este ecosistema virtual enfrenta el reto insoslayable de la brecha digital en comunidades rurales, donde la falta de conectividad e infraestructura perpetúa la exclusión sanitaria.",
-        q: "¿Cuál es la función del conector discursivo 'sin embargo' en el fragmento analizado?",
-        options: ["A) Introducir una consecuencia directa de la reducción de costos.", "B) Matizar las ventajas expuestas previamente mediante la introducción de una limitante real.", "C) Concluir de forma definitiva el análisis argumentativo sobre la salud digital."],
-        correct: 1,
-        explanation: "Retroalimentación: El nexo adversativo 'sin embargo' frena el discurso positivo (ventajas) para contrastarlo con el aspecto negativo (la brecha digital)."
-    },
-
-    // =========================================================================
-    // ÁREA: REDACCIÓN INDIRECTA
-    // =========================================================================
-    {
-        q: "Identifique cuál de las siguientes palabras requiere la escritura con la grafía intermedia 'sc' de acuerdo con el diccionario normativo.",
-        options: ["A) Absceso", "B) Abceso", "C) Abseso"],
-        correct: 0,
-        explanation: "Retroalimentación: El término médico que denota acumulación de pus en un tejido acumulado se escribe correctamente como 'absceso' (contiene b, s y c)."
-    },
-    {
-        q: "Complete el enunciado clínico empleando los nexos que aporten coherencia de causa y efecto:\nEl paciente no modificó sus hábitos dietéticos, ________ los niveles de triglicéridos continuaron elevados; ________, el tratamiento farmacológico no logró el éxito terapéutico esperado.",
-        options: ["A) por lo tanto - por consiguiente", "B) ya que - sin embargo", "C) es decir - además"],
-        correct: 0,
-        explanation: "Retroalimentación: Ambas partes del enunciado requieren nexos consecutivos o de causa-efecto lógicos para explicar por qué falló el esquema de tratamiento clínico."
-    },
-    {
-        q: "Seleccione la opción que contenga el vicio del lenguaje denominado 'dequeísmo'.",
-        options: ["A) El urgenciólogo me aseguró de que el paciente ya estaba fuera de peligro.", "B) El especialista insistió en que se repitieran los laboratorios.", "C) Pienso que la cirugía debe programarse con carácter de urgente."],
-        correct: 0,
-        explanation: "Retroalimentación: El dequeísmo consiste en el uso incorrecto de la estructura 'de que'. El verbo 'asegurar' es transitivo y exige un objeto directo directo: 'aseguró que...', no 'aseguró de que'."
-    },
-    {
-        q: "Identifique cuál opción emplea los dos puntos (:) de forma gramaticalmente correcta para introducir una lista ordenada de elementos.",
-        options: ["A) Los componentes evaluados en la biometría hemática son: eritrocitos, leucocitos y plaquetas.", "B) En la biometría hemática se analizan los siguientes elementos: eritrocitos, leucocitos y plaquetas.", "C) Los elementos analizados: incluyen eritrocitos, leucocitos y plaquetas."],
-        correct: 1,
-        explanation: "Retroalimentación: No se deben colocar dos puntos inmediatamente después de un verbo (como en la opción A). La opción B introduce una frase preparatoria completa, validando sintácticamente el uso de los dos puntos."
-    },
-    {
-        q: "Seleccione la palabra que por sus propiedades prosódicas se clasifique como grave (o llana) y que requiera acentuación gráfica (tilde).",
-        options: ["A) Cateter", "B) Medula", "C) Analisis"],
-        correct: 0,
-        explanation: "Retroalimentación: 'Catéter' tiene su sílaba tónica en la penúltima sílaba (ca-té-ter); termina en una consonante distinta de 'n' o 's', por lo que cumple la regla de las palabras graves."
-    },
-
-    // =========================================================================
-    // ÁREA: PREMEDICINA (MICROBIOLOGÍA, INMUNOLOGÍA Y BIOQUÍMICA)
-    // =========================================================================
-    {
-        q: "¿Cuál es el principal órgano linfoide secundario encargado de filtrar la sangre circulante y eliminar los eritrocitos viejos o dañados (proceso de hemocateresis)?",
-        options: ["A) El bazo", "B) El timo", "C) La médula ósea roja"],
-        correct: 0,
-        explanation: "Retroalimentación: El bazo filtra la sangre periférica destruyendo los hematíes senescentes en su pulpa roja, mientras que el timo y la médula ósea son órganos linfoides primarios."
-    },
-    {
-        q: "Ante una caída drástica de la presión arterial, ¿qué enzima es secretada por las células yuxtaglomerulares del riñón para activar el sistema neurohormonal de compensación?",
-        options: ["A) Renina", "B) Angiotensina II", "C) Aldosterona"],
-        correct: 0,
-        explanation: "Retroalimentación: El riñón libera renina, la cual rompe el angiotensinógeno hepático para iniciar la cascada del sistema Renina-Angiotensina-Aldosterona encargado de elevar la presión."
-    },
-    {
-        q: "¿Qué diferencia principal existe entre la división celular por mitosis y la división celular por meiosis?",
-        options: ["A) La mitosis produce cuatro células hijas haploides idénticas.", "B) La meiosis genera variabilidad genética y reduce el número cromosómico a la mitad.", "C) La mitosis ocurre exclusivamente en las células de la línea germinal."],
-        correct: 1,
-        explanation: "Retroalimentación: La meiosis es una división reductiva (de 2n a n) propia de gametos que introduce variabilidad mediante el entrecruzamiento; la mitosis conserva el número diploide somático."
-    },
-    {
-        q: "¿Qué componente macromolecular de la pared celular bacteriana retiene el complejo cristal violeta-iodo, tiñendo de color azul-púrpura a las bacterias Gram positivas?",
-        options: ["A) Peptidoglicano (mureína)", "B) Lipopolisacáridos", "C) Ergosterol"],
-        correct: 0,
-        explanation: "Retroalimentación: Las bacterias Gram positivas poseen una capa gruesa y densa de peptidoglicano que retiene el tinte básico durante la decoloración con alcohol-acetona."
-    },
-    {
-        q: "¿Qué clase de anticuerpos o inmunoglobulinas se secreta principalmente en forma de dímero en las mucosas corporales, la saliva, las lágrimas y el calostro materno?",
-        options: ["A) Inmunoglobulina M (IgM)", "B) Inmunoglobulina A (IgA)", "C) Inmunoglobulina E (IgE)"],
-        correct: 1,
-        explanation: "Retroalimentación: La IgA es la inmunoglobulina secretora por excelencia, crucial para la protección inmunitaria mucosal frente a patógenos invasores."
-    },
-    {
-        q: "¿Qué enzima digestiva es producida y secretada por las células principales de las glándulas gástricas en el estómago para iniciar la degradación química de las proteínas?",
-        options: ["A) Tripsina", "B) Pepsina", "C) Amilasa"],
-        correct: 1,
-        explanation: "Retroalimentación: Las células principales secretan el cimógeno pepsinógeno, el cual se activa por el ácido clorhídrico convirtiéndose en pepsina, una endopeptidasa gástrica."
-    },
-    {
-        q: "En una prueba de tamizaje diagnóstico, ¿cómo se denomina a la propiedad matemática que mide la capacidad del test para detectar correctamente a los individuos verdaderamente enfermos?",
-        options: ["A) Sensibilidad", "B) Especificidad", "C) Valor predictivo negativo"],
-        correct: 0,
-        explanation: "Retroalimentación: La sensibilidad es la proporción de verdaderos positivos detectados por la prueba diagnóstica entre el total de individuos enfermos."
-    },
-// =========================================================================
-    // ÁREA: PREMEDICINA (ANATOMÍA Y BIOLOGÍA CELULAR)
-    // =========================================================================
-    {
-        q: "¿Cuál es el principal neurotransmisor inhibidor del sistema nervioso central en el encéfalo humano, encargado de reducir la excitabilidad neuronal?",
-        options: ["A) Glutamato", "B) Ácido gamma-aminobutírico (GABA)", "C) Acetilcolina"],
-        correct: 1,
-        explanation: "Retroalimentación: El GABA es el neurotransmisor inhibitorio por excelencia en el cerebro; equilibra la actividad eléctrica evitando la sobreexcitación. El glutamato es su contraparte excitatoria."
-    },
-    {
-        q: "Estructura del sistema respiratorio donde se lleva a cabo la hematosis o intercambio de gases (oxígeno y dióxido de carbono) entre el espacio aéreo y los capilares sanguíneos.",
-        options: ["A) Bronquiolos terminales", "B) Alvéolos pulmonares", "C) Tráquea"],
-        correct: 1,
-        explanation: "Retroalimentación: La hematosis se produce exclusivamente en la membrana alvéolo-capilar dentro de los sacos alveolares, donde los gases difunden pasivamente según sus gradientes de presión."
-    },
-    {
-        q: "¿Qué hormona del sistema endocrino promueve activamente la reabsorción de sodio y la excreción de potasio en los túbulos contorneados distales del riñón?",
-        options: ["A) Aldosterona", "B) Cortisol", "C) Hormona antidiurética (ADH)"],
-        correct: 0,
-        explanation: "Retroalimentación: La aldosterona (secretada por la corteza suprarrenal) regula la presión arterial e hidroelectrolítica forzando el ahorro de sodio y la eliminación renal de potasio."
-    },
-    {
-        q: "Organelo celular esférico que alberga en su interior enzimas hidrolíticas ácidas capaces de degradar macromoléculas, bacterias fagocitadas y componentes celulares obsoletos.",
-        options: ["A) Peroxisoma", "B) Lisosoma", "C) Aparato de Golgi"],
-        correct: 1,
-        explanation: "Retroalimentación: Los lisosomas fungen como el sistema digestivo y de reciclaje de la célula eucariota gracias a sus hidrolasas ácidas que operan a un pH óptimo cercano a 5.0."
-    },
-    {
-        q: "¿Qué sección o región de un hueso largo se conoce propiamente como el cuerpo alargado del mismo, constituido fundamentalmente por tejido óseo compacto?",
-        options: ["A) Epífisis", "B) Diáfisis", "C) Metáfisis"],
-        correct: 1,
-        explanation: "Retroalimentación: La diáfisis es el tallo o cuerpo central del hueso largo. Las epífisis corresponden a los extremos y la metáfisis representa la línea de crecimiento intermedio."
-    },
-    {
-        q: "En el ámbito de la epidemiología, la tasa que calcula específicamente la proporción de personas enfermas de una patología que fallecen a causa de esta se denomina:",
-        options: ["A) Tasa de mortalidad general", "B) Tasa de letalidad", "C) Tasa de morbilidad"],
-        correct: 1,
-        explanation: "Retroalimentación: La letalidad mide la virulencia o gravedad de una enfermedad al cuantificar el porcentaje de muertes exclusivamente dentro del universo de pacientes contagiados."
-    },
-    {
-        q: "¿Cuál es el aminoácido inicial con el que comienza de manera universal la traducción de cualquier cadena polipeptídica en los ribosomas eucariotas?",
-        options: ["A) Metionina", "B) Alanina", "C) Leucina"],
-        correct: 0,
-        explanation: "Retroalimentación: El codón de inicio en el ARN mensajero es el triplete AUG, el cual codifica específicamente para la incorporación del aminoácido metionina."
-    },
-    {
-        q: "Capa histológica de los vasos sanguíneos que está constituida por células de músculo liso organizadas de forma concéntrica y controladas por el sistema nervioso autónomo.",
-        options: ["A) Túnica íntima", "B) Túnica media", "C) Túnica adventicia"],
-        correct: 1,
-        explanation: "Retroalimentación: La túnica media es la responsable de los procesos dinámicos de vasoconstricción y vasodilatación para modular el flujo sanguíneo y la resistencia periférica."
-    },
-
-    // =========================================================================
-    // ÁREA: PENSAMIENTO MATEMÁTICO
-    // =========================================================================
-    {
-        q: "Un consultorio de pediatría registra el peso de 4 neonatos de término: 3.1 kg, 2.9 kg, 3.5 kg y 3.3 kg. Calcule la media aritmética del peso del grupo.",
-        options: ["A) 3.20 kg", "B) 3.15 kg", "C) 3.30 kg"],
-        correct: 0,
-        explanation: "Retroalimentación: Sumando los pesos de todos los individuos da 12.8 kg. Al dividir este total entre la cantidad de elementos observados (4), se obtiene una media exacta de 3.20 kg."
-    },
-    {
-        q: "Determine el resultado numérico correcto de la siguiente operación combinada respetando las directrices de la jerarquía operacional: 12 - 4 * 2 + 15 / 3",
-        options: ["A) 21", "B) 9", "C) 1"],
-        correct: 1,
-        explanation: "Retroalimentación: Primero se ejecutan las multiplicaciones y divisiones: (4*2=8) y (15/3=5). Luego se procede con las sumas y restas lineales de izquierda a derecha: 12 - 8 + 5 = 4 + 5 = 9."
-    },
-    {
-        q: "Las edades de dos estudiantes se encuentran en una razón geométrica de 3:4. Si se conoce que la suma de ambas edades equivale a 42 años, ¿cuál es la edad del menor?",
-        options: ["A) 18 años", "B) 24 años", "C) 14 años"],
-        correct: 0,
-        explanation: "Retroalimentación: Planteando algebraicamente la proporción: 3x + 4x = 42 -> 7x = 42 -> x = 6. Multiplicando por el factor proporcional del menor: 3 * 6 = 18 años."
-    },
-    {
-        q: "Una escalera metálica de 10 metros se apoya contra una pared. Si la base de la escalera dista exactamente 6 metros de la base de la pared, ¿a qué altura del suelo se sitúa su extremo superior?",
-        options: ["A) 8 metros", "B) 4 metros", "C) 7.5 metros"],
-        correct: 0,
-        explanation: "Retroalimentación: Por teorema de Pitágoras, la altura corresponde a un cateto: c = √(10² - 6²) = √(100 - 36) = √64 = 8 metros."
-    },
-    {
-        q: "¿Cuál de las siguientes afirmaciones describe con precisión el comportamiento gráfico de una función lineal cuya pendiente matemática resulta negativa (m < 0)?",
-        options: ["A) Se grafica como una recta perfectamente paralela al eje x", "B) Es una recta creciente al evaluarse de izquierda a derecha", "C) Es una recta decreciente al evaluarse de izquierda a derecha"],
-        correct: 2,
-        explanation: "Retroalimentación: Una pendiente negativa indica que por cada unidad que avanza el eje horizontal, el valor en el eje vertical disminuye de manera uniforme, generando un declive hacia la derecha."
-    },
-    {
-        q: "Se extrae de manera aleatoria una carta de una baraja francesa estándar que posee 52 naipes en total. ¿Cuál es la probabilidad matemática de que la carta extraída sea un As?",
-        options: ["A) 1/13", "B) 4/13", "C) 1/52"],
-        correct: 0,
-        explanation: "Retroalimentación: La baraja cuenta con 4 ases en total (uno por cada figura). Casos favorables / casos totales = 4/52, fracción que al simplificarse dividiendo entre 4 resulta en 1/13."
-    },
-    {
-        q: "Resuelva la siguiente ecuación lineal de primer grado para hallar el valor de la incógnita x: x + 5 = 2x - 3",
-        options: ["A) x = 8", "B) x = 2", "C) x = -2"],
-        correct: 0,
-        explanation: "Retroalimentación: Agrupando las variables numéricas: transponemos x restando al miembro derecho y el -3 sumando al izquierdo: 5 + 3 = 2x - x, lo cual nos otorga de forma directa 8 = x."
-    },
-
-    // =========================================================================
-    // ÁREA: COMPRESIÓN LECTORA
-    // =========================================================================
-    {
-        passage: "TEXTO 3: El modelo biomédico tradicional, de corte netamente cartesiano, tiende a parcelar el organismo humano en subestructuras mecánicas independientes. Aunque esta aproximación ultraespecializada permitió hitos quirúrgicos y farmacológicos insólitos, marginó las dimensiones psicosomáticas y socioambientales de los procesos patológicos. Hoy en día, la psiconeuroinmunología demuestra de forma concluyente que las respuestas de estrés crónico alteran directamente la producción de citocinas proinflamatorias, vinculando la salud mental con la vulnerabilidad biológica e inmunológica del huésped.",
-        q: "A partir de la argumentación expuesta en el Texto 3, identifique cuál de las siguientes afirmaciones constituye una inferencia válida.",
-        options: ["A) Los avances quirúrgicos del siglo XX carecen de valor científico para el paradigma médico actual.", "B) El modelo biomédico tradicional resulta insuficiente para explicar de forma integral las afecciones psicosomáticas.", "C) La secreción de citocinas proinflamatorias está regulada única y exclusivamente por factores de herencia genética."],
-        correct: 1,
-        explanation: "Retroalimentación: Dado que el texto indica que el modelo tradicional parcelaba el cuerpo y marginaba lo psicosomático, y que la ciencia actual ya demostró esa conexión mente-cuerpo, se infiere que el enfoque antiguo queda rebasado e insuficiente ante estas patologías."
-    },
-    {
-        passage: "TEXTO 3: El modelo biomédico tradicional, de corte netamente cartesiano, tiende a parcelar el organismo humano en subestructuras mecánicas independientes. Aunque esta aproximación ultraespecializada permitió hitos quirúrgicos y farmacológicos insólitos, marginó las dimensiones psicosomáticas y socioambientales de los procesos patológicos. Hoy en día, la psiconeuroinmunología demuestra de forma concluyente que las respuestas de estrés crónico alteran directamente la producción de citocinas proinflamatorias, vinculando la salud mental con la vulnerabilidad biológica e inmunológica del huésped.",
-        q: "¿Qué vocablo funciona como el antónimo contextual exacto de la palabra 'parcelar' utilizada por el autor en el fragmento?",
-        options: ["A) Fragmentar", "B) Integrar", "C) Segmentar"],
-        correct: 1,
-        explanation: "Retroalimentación: En la lectura, 'parcelar' connota la idea de fragmentar o aislar las partes corporales. El antónimo u opuesto discursivo de esta concepción es unificar o 'integrar'."
-    },
-    {
-        passage: "TEXTO 4: El consentimiento informado no representa un simple trámite burocrático o un blindaje legal frente a litigios por mala práctica médica. Es, fundamentalmente, la cristalización ética de la autonomía del paciente. Consiste en un proceso dialógico continuo donde el facultativo traduce la complejidad técnica de un procedimiento a un lenguaje accesible, permitiendo que el individuo asuma con libertad los riesgos inherentes a su terapéutica. Un consentimiento firmado sin comprensión previa carece de toda validez deontológica.",
-        q: "De acuerdo con el Texto 4, el valor primordial del consentimiento informado radica en:",
-        options: ["A) Ofrecer un resguardo legal infalible a las corporaciones médicas ante reclamaciones jurídicas.", "B) Garantizar las condiciones para que el paciente ejerza su libre albedrío y autonomía moral.", "C) Comprobar administrativamente que el personal del hospital cumplió con su horario laboral."],
-        correct: 1,
-        explanation: "Retroalimentación: El texto estipula con claridad literal que el documento constituye 'la cristalización ética de la autonomía del paciente', subordinando los aspectos administrativos a la comprensión libre."
-    },
-    {
-        passage: "TEXTO 4: El consentimiento informado no representa un simple trámite burocrático o un blindaje legal frente a litigios por mala práctica médica. Es, fundamentalmente, la cristalización ética de la autonomía del paciente. Consiste en un proceso dialógico continuo donde el facultativo traduce la complejidad técnica de un procedimiento a un lenguaje accesible, permitiendo que el individuo asuma con libertad los riesgos inherentes a su terapéutica. Un consentimiento firmado sin comprensión previa carece de toda validez deontológica.",
-        q: "¿A qué campo disciplinar específico hace referencia el término 'deontológica' empleado al cierre del texto?",
-        options: ["A) Al estudio macroeconómico de los costos operativos en salud.", "B) A la rama de la ética que rige los deberes y principios de una profesión.", "C) A las metodologías avanzadas de la medicina forense post-mortem."],
-        correct: 1,
-        explanation: "Retroalimentación: La deontología profesional refiere explícitamente a los códigos de conducta y principios éticos obligatorios que norman la práctica médica."
-    },
-
-    // =========================================================================
-    // ÁREA: REDACCIÓN INDIRECTA
-    // =========================================================================
-    {
-        q: "Elija la opción que presente la ortografía correcta de la palabra que completa sintácticamente el espacio en blanco:\nEl laboratorio de patología sospechaba de un daño hepático severo al evaluar el color de las __________ del paciente.",
-        options: ["A) eses", "B) heces", "C) eces"],
-        correct: 1,
-        explanation: "Retroalimentación: El sustantivo científico que alude a las materias fecales se escribe con 'h' inicial y 'c' intermedia: 'heces'."
-    },
-    {
-        q: "Identifique cuál de los siguientes enunciados clínicos incurre en un vicio sintáctico de solecismo o falta de concordancia en pasiva refleja.",
-        options: ["A) Se vende batas de algodón para cirugía en el módulo administrativo.", "B) Se venden batas de algodón para cirugía en el módulo administrativo.", "C) Se busca personal calificado para ingresar al departamento de terapia."],
-        correct: 0,
-        explanation: "Retroalimentación: En la estructura de pasiva refleja ('se' + verbo + sujeto pasivo), el verbo debe concordar obligatoriamente en plural si el objeto es plural. Debe escribirse: 'Se venden batas'."
-    },
-    {
-        q: "Determine cuál de los términos subrayados requiere la colocación de acento gráfico (tilde) por pertenecer a la categoría de palabras agudas terminadas en vocal.",
-        options: ["A) El médico colocó una sonda en la faringe.", "B) El electroencefalograma analizó el encefalon.", "C) El cirujano solicitó de inmediato el bisturi."],
-        correct: 2,
-        explanation: "Retroalimentación: 'Bisturí' es un vocablo agudo cuya fuerza de pronunciación recae en la última sílaba y, al terminar en vocal 'i', requiere tilde por ley ortográfica estándar."
-    },
-    {
-        q: "Complete de forma ortográfica las grafías ausentes en la siguiente frase:\nEl urgenciólogo demostró gran de__treza al reali__ar la __utura de la lesión abierta en el tórax.",
-        options: ["A) s - z - s", "B) s - s - s", "C) z - z - c"],
-        correct: 0,
-        explanation: "Retroalimentación: 'Destreza' se escribe con s; los verbos con terminación -izar se escriben con z ('realizar'); y 'sutura' requiere s inicial."
-    },
-    {
-        q: "Seleccione el enunciado que manifiesta el vicio del lenguaje denominado anfibología (ambigüedad en la interpretación del sentido).",
-        options: ["A) El oncólogo observó al paciente vistiendo su bata blanca de hospital.", "B) El oncólogo observó que el paciente traía puesta una bata blanca de hospital.", "C) El médico analizó con detenimiento los estudios de gabinete del paciente."],
-        correct: 0,
-        explanation: "Retroalimentación: La redacción de la opción A es anfibológica porque no permite delimitar lingüísticamente si el que portaba la bata blanca era el médico que observaba o el paciente observado."
-    },
-
-    // =========================================================================
-    // ÁREA: PREMEDICINA (MICROBIOLOGÍA Y FISIOLOGÍA PATOLÓGICA)
-    // =========================================================================
-    {
-        q: "¿Cuál es la subcapa celular de la corteza suprarrenal encargada de la biosíntesis y secreción de los mineralocorticoides endógenos, principalmente la aldosterona?",
-        options: ["A) Zona glomerular", "B) Zona fasciculada", "C) Zona reticular"],
-        correct: 0,
-        explanation: "Retroalimentación: La corteza posee una distribución anatómica de fuera hacia dentro: la zona glomerular produce aldosterona, la fasciculada sintetiza cortisol y la reticular produce andrógenos."
-    },
-    {
-        q: "Mecanismo patológico o fisiológico de muerte celular programada que no provoca lisis celular ni libera su contenido al exterior, evitando la generación de procesos inflamatorios en el tejido.",
-        options: ["A) Necrosis", "B) Apoptosis", "C) Isquemia"],
-        correct: 1,
-        explanation: "Retroalimentación: La apoptosis involucra una fragmentación celular controlada (cuerpos apoptóticos) que son fagocitados de forma limpia, diferenciándose de la necrosis, la cual destruye la membrana e inflama."
-    },
-    {
-        q: "¿Qué nervio craneal conduce de forma aferente al encéfalo los estímulos sensitivos vinculados a la captación de ondas sonoras y al control cinético del equilibrio espacial?",
-        options: ["A) Nervio trigémino (V par)", "B) Nervio vestibuloclear (VIII par)", "C) Nervio vago (X par)"],
-        correct: 1,
-        explanation: "Retroalimentación: El octavo par craneal o vestibuloclear posee dos ramas especializadas encargadas de transmitir los impulsos auditivos y la propiocepción del aparato vestibular del oído interno."
-    },
-    {
-        q: "En la secuencia madurativa de la eritropoyesis, ¿cuál es la última célula precursora nucleada o anucleada inmediata antes de consolidarse como un eritrocito maduro?",
-        options: ["A) Proeritroblasto", "B) Reticulocito", "C) Megacariocito"],
-        correct: 1,
-        explanation: "Retroalimentación: El reticulocito representa la fase celular joven que ha expulsado su núcleo pero retiene trazas de ARN. Permanece un día en sangre periférica antes de madurar a eritrocito."
-    },
-    {
-        q: "¿Qué macromolécula enzimática presente en la saliva inicia la hidrólisis química de los enlaces alfa-glucosídicos del almidón durante la masticación?",
-        options: ["A) Amilasa salival (ptialina)", "B) Lipasa gástrica", "C) Tripsina pancreática"],
-        correct: 0,
-        explanation: "Retroalimentación: La digestión química de los carbohidratos arranca en la boca mediante la amilasa salival, la cual rompe polisacáridos complejos hasta transformarlos en oligosacáridos."
-    },
-    {
-        q: "¿Cuál de los siguientes animales actúa como el hospedero definitivo (donde se efectúa la fase de reproducción sexual) del parásito protozoario Toxoplasma gondii?",
-        options: ["A) El ser humano", "B) Los felinos domésticos y salvajes", "C) Los porcinos de granja"],
-        correct: 1,
-        explanation: "Retroalimentación: Los felinos son los únicos hospederos definitivos de Toxoplasma gondii, hospedando la replicación sexual del parásito y eliminando los ooquistes mediante la materia fecal."
-    }
-// =========================================================================
-    // ÁREA: PREMEDICINA (ANATOMÍA, FISIOLOGÍA Y BIOLOGÍA CELULAR)
-    // =========================================================================
-    {
-        q: "¿En qué estructura anatómica específica de la nefrona se lleva a cabo el proceso de filtración del plasma sanguíneo para formar el ultrafiltrado glomerular inicial?",
-        options: ["A) Cápsula de Bowman", "B) Tubulo contorneado proximal", "C) Asa de Henle"],
-        correct: 0,
-        explanation: "Retroalimentación: La filtración ocurre en el corpúsculo renal, constituido por el glomérulo y la cápsula de Bowman, la cual atrapa el líquido filtrado desde los capilares."
-    },
-    {
-        q: "La capa más interna y gruesa del corazón, constituida fundamentalmente por células de músculo cardíaco estriado involuntario encargadas de la contracción, se denomina:",
-        options: ["A) Endocardio", "B) Miocardio", "C) Pericardio"],
-        correct: 1,
-        explanation: "Retroalimentación: El miocardio es el tejido muscular propiamente dicho del corazón. El endocardio es el revestimiento epitelial interno y el pericardio es el saco membranoso externo."
-    },
-    {
-        q: "¿Cuál de los siguientes mecanismos de transporte celular consume energía metabólica de forma directa (ATP) para movilizar iones en contra de su gradiente de concentración?",
-        options: ["A) Difusión facilitada", "B) Bomba de Sodio-Potasio", "C) Ósmosis"],
-        correct: 1,
-        explanation: "Retroalimentación: La bomba Na+/K+-ATPasa es un ejemplo clásico de transporte activo primario que hidroliza ATP para expulsar 3 sodios e ingresar 2 potasios a la célula en contra de sus gradientes."
-    },
-    {
-        q: "¿Qué plano anatómico divide al cuerpo humano de forma vertical en una sección anterior (ventral) y una sección posterior (dorsal)?",
-        options: ["A) Plano sagital", "B) Plano coronal o frontal", "C) Plano transversal"],
-        correct: 1,
-        explanation: "Retroalimentación: El plano coronal o frontal corta al organismo de manera perpendicular al plano sagital, dividiéndolo en mitades delantera (anterior) y trasera (posterior)."
-    },
-    {
-        q: "¿Qué tipo de leucocitos granulocitos son las primeras células inmunitarias en migrar masivamente al sitio de una infección bacteriana aguda para fagocitar y destruir patógenos?",
-        options: ["A) Neutrófilos", "B) Eosinófilos", "C) Basófilos"],
-        correct: 0,
-        explanation: "Retroalimentación: Los neutrófilos constituyen la primera línea de defensa celular en la inmunidad innata frente a infecciones bacterianas agudas y son los principales componentes del pus."
-    },
-
-    // =========================================================================
-    // ÁREA: PENSAMIENTO MATEMÁTICO
-    // =========================================================================
-    {
-        q: "Resuelva el siguiente sistema de ecuaciones lineales de 2x2 para hallar el valor de 'y':\n2x + y = 10\n3x - y = 5",
-        options: ["A) y = 4", "B) y = 3", "C) y = 5"],
-        correct: 0,
-        explanation: "Retroalimentación: Sumando ambas ecuaciones directamente: (2x + 3x) + (y - y) = 10 + 5 -> 5x = 15 -> x = 3. Sustituyendo x en la primera ecuación: 2(3) + y = 10 -> 6 + y = 10 -> y = 4."
-    },
-    {
-        q: "Encuentre la mediana del siguiente conjunto desordenado de calificaciones de laboratorio clínico: 8, 5, 10, 6, 9.",
-        options: ["A) 7.6", "B) 8", "C) 9"],
-        correct: 1,
-        explanation: "Retroalimentación: Ordenando los datos de menor a mayor: 5, 6, 8, 9, 10. Al ser un número impar de datos (5), la mediana es el valor central exacto, que corresponde al 8."
-    },
-    {
-        q: "Un hospital reporta que el 60% de los pacientes ingresados son mujeres. Si se seleccionan al azar dos pacientes de forma independiente, ¿cuál es la probabilidad de que ambos sean mujeres?",
-        options: ["A) 36%", "B) 60%", "C) 12%"],
-        correct: 0,
-        explanation: "Retroalimentación: La probabilidad de un evento independiente simultáneo es el producto de sus probabilidades individuales: 0.60 * 0.60 = 0.36, lo que equivale al 36%."
-    },
-    {
-        q: "Un triángulo rectángulo posee un cateto base de 4 cm y una hipotenusa de 5 cm. Calcule el área total de esta figura geométrica.",
-        options: ["A) 10 cm²", "B) 6 cm²", "C) 12 cm²"],
-        correct: 1,
-        explanation: "Retroalimentación: Por Pitágoras, el cateto faltante (altura) es: √(5² - 4²) = √9 = 3 cm. El área del triángulo es (base * altura) / 2 = (4 * 3) / 2 = 12 / 2 = 6 cm²."
-    },
-    {
-        q: "Factorice la siguiente expresión algebraica correspondiente a una diferencia de cuadrados perfectos: 4x² - 9",
-        options: ["A) (2x - 3)(2x - 3)", "B) (2x + 3)(2x - 3)", "C) (4x - 9)(x + 1)"],
-        correct: 1,
-        explanation: "Retroalimentación: Una diferencia de cuadrados se factoriza como el producto de dos binomios conjugados: (√a + √b)(√a - √b). Obteniendo las raíces: √(4x²) = 2x y √9 = 3. Resultado: (2x + 3)(2x - 3)."
-    },
-    {
-        q: "Se prepara una solución médica diluyendo 20 ml de fármaco puro en 180 ml de agua destilada. ¿Cuál es el porcentaje en volumen (% V/V) del fármaco en la mezcla total?",
-        options: ["A) 10%", "B) 11.1%", "C) 20%"],
-        correct: 0,
-        explanation: "Retroalimentación: El volumen total de la solución es soluto + solvente = 20 ml + 180 ml = 200 ml. Porcentaje V/V = (volumen soluto / volumen total) * 100 = (20 / 200) * 100 = 0.10 * 100 = 10%."
-    },
-    {
-        q: "¿Cuál es el valor de la coordenada de intersección con el eje Y (ordenada al origen) de la función lineal f(x) = -3x + 7?",
-        options: ["A) (0, -3)", "B) (0, 7)", "C) (7, 0)"],
-        correct: 1,
-        explanation: "Retroalimentación: La forma pendiente-intersección es y = mx + b, donde 'b' es la ordenada al origen. Evaluando cuando x = 0: f(0) = -3(0) + 7 = 7. El punto es (0, 7)."
-    },
-
-    // =========================================================================
-    // ÁREA: COMPRESIÓN LECTORA (INFERENCIAL, CRÍTICA Y LITERAL)
-    // =========================================================================
-    {
-        passage: "TEXTO 5: La integración de sistemas de Inteligencia Artificial (IA) en el diagnóstico por imagenología ha abierto un debate bioético sin precedentes. Los algoritmos de aprendizaje profundo exhiben una tasa de precisión en la detección de nódulos pulmonares malignos que iguala, y en ocasiones supera, a la de radiólogos experimentados. No obstante, surge el dilema de la opacidad algorítmica o 'caja negra': los desarrolladores no pueden determinar con exactitud los pesos matemáticos específicos que llevaron a la IA a emitir un diagnóstico concreto. Delegar la decisión clínica definitiva a una máquina desliga al médico de su responsabilidad ontológica y amenaza con deshumanizar la relación médico-paciente.",
-        q: "De acuerdo con el Texto 5, ¿en qué consiste el concepto de 'opacidad algorítmica'?",
-        options: ["A) En la imposibilidad de comprender los procesos lógicos internos exactos que utiliza la máquina para diagnosticar.", "B) En la baja resolución de las imágenes médicas que el software es capaz de procesar.", "C) En los altos costos económicos de las patentes de software hospitalario."],
-        correct: 0,
-        explanation: "Retroalimentación: El texto describe la 'caja negra' señalando de manera explícita que 'los desarrolladores no pueden determinar con exactitud los pesos matemáticos específicos que llevaron a la IA a emitir un diagnóstico concreto'."
-    },
-    {
-        passage: "TEXTO 5: La integración de sistemas de Inteligencia Artificial (IA) en el diagnóstico por imagenología ha abierto un debate bioético sin precedentes. Los algoritmos de aprendizaje profundo exhiben una tasa de precisión en la detección de nódulos pulmonares malignos que iguala, y en ocasiones supera, a la de radiólogos experimentados. No obstante, surge el dilema de la opacidad algorítmica o 'caja negra': los desarrolladores no pueden determinar con exactitud los pesos matemáticos específicos que llevaron a la IA a emitir un diagnóstico concreto. Delegar la decisión clínica definitiva a una máquina desliga al médico de su responsabilidad ontológica y amenaza con deshumanizar la relación médico-paciente.",
-        q: "A partir de las críticas formuladas en el fragmento, se puede concluir que para el autor de la lectura la IA debe considerarse como:",
-        options: ["A) Un sustituto infalible y definitivo del personal médico especialista.", "B) Una herramienta complementaria supeditada al juicio crítico del profesional de la salud.", "C) Una tecnología peligrosa que debería prohibirse de inmediato en los hospitales."],
-        correct: 1,
-        explanation: "Retroalimentación: Dado que el autor advierte que delegar la decisión clínica definitiva a una máquina 'desliga al médico de su responsabilidad' y deshumaniza la práctica, se infiere lógicamente que aboga por mantener el control humano sobre la tecnología."
-    },
-    {
-        passage: "TEXTO 5: La integración de sistemas de Inteligencia Artificial (IA) en el diagnóstico por imagenología ha abierto un debate bioético sin precedentes. Los algoritmos de aprendizaje profundo exhiben una tasa de precisión en la detección de nódulos pulmonares malignos que iguala, y en ocasiones supera, a la de radiólogos experimentados. No obstante, surge el dilema de la opacidad algorítmica o 'caja negra': los desarrolladores no pueden determinar con exactitud los pesos matemáticos específicos que llevaron a la IA a emitir un diagnóstico concreto. Delegar la decisión clínica definitiva a una máquina desliga al médico de su responsabilidad ontológica y amenaza con deshumanizar la relación médico-paciente.",
-        q: "Seleccione el antónimo contextual de la palabra 'malignos' empleada en el primer párrafo del Texto 5.",
-        options: ["A) Benignos", "B) Inofensivos", "C) Crónicos"],
-        correct: 0,
-        explanation: "Retroalimentación: En la terminología médica, el antónimo clínico exacto de una neoformación o tumoración 'maligna' (canceroza) es una de naturaleza 'benigna'."
-    },
-
-    // =========================================================================
-    // ÁREA: REDACCIÓN INDIRECTA (GRAMÁTICA Y ORTOGRAFÍA)
-    // =========================================================================
-    {
-        q: "Identifique cuál de los siguientes enunciados emplea el punto y coma (;) de forma correcta según las reglas normativas de la RAE.",
-        options: ["A) El cirujano limpió la herida con antiséptico; pero no pudo detener la hemorragia interna.", "B) Los pacientes graves fueron trasladados a terapia intensiva; los estables, a piso de observación.", "C) Mañana se realizarán tres estudios; ultrasonido, tomografía y resonancia."],
-        correct: 1,
-        explanation: "Retroalimentación: La opción B utiliza correctamente el punto y coma para separar oraciones sintácticamente independientes pero estrechamente vinculadas, cohabitando con una coma elíptica (que sustituye al verbo 'fueron trasladados')."
-    },
-    {
-        q: "Seleccione la opción que presenta un error de grafías en el uso de las consonantes g y j.",
-        options: ["A) El epidemiólogo sugirió rigidez en las medidas de aislamiento social.", "B) El médico cirujano realizó un crujido intencional al acomodar la articulación.", "C) El patólogo reportó que el tejido presentaba una morfología heterojénea."],
-        correct: 2,
-        explanation: "Retroalimentación: La palabra 'heterogénea' proviene de la raíz griega 'heteros' y 'genos' (género, origen), por lo que se escribe obligatoriamente con la grafía 'g', no con 'j'."
-    },
-    {
-        q: "Complete el espacio en blanco respetando las leyes de concordancia sintáctica entre el sujeto compuesto y el verbo:\nEl equipo de investigadores junto con el director del hospital __________ un nuevo protocolo de bioseguridad.",
-        options: ["A) diseñó", "B) diseñaron", "C) diseñaran"],
-        correct: 0,
-        explanation: "Retroalimentación: Cuando el núcleo del sujeto está en singular ('El equipo') y es acompañado por un complemento introducido por 'junto con', el verbo debe concordar formalmente en singular con el núcleo principal."
-    },
-    {
-        q: "Identifique la oración que carece de vicios del lenguaje (vicios de redacción) y muestra la mayor pulcritud comunicativa.",
-        options: ["A) Volví a repetir el examen médico para asegurar los resultados.", "B) El anestesiólogo le dijo al residente que su paciente estaba listo.", "C) El cardiólogo prescribió un fármaco antihipertensivo tras evaluar al paciente."],
-        correct: 2,
-        explanation: "Retroalimentación: La opción A presenta un pleonasmo ('volví a repetir') y la opción B es anfibológica (¿el paciente de quién?). La opción C es formal, clara, precisa y carece de vicios."
-    },
-    {
-        q: "Determine cuál de las siguientes palabras requiere la adición de una tilde por tratarse de un vocablo esdrújulo.",
-        options: ["A) Oxigeno (sustantivo)", "B) Sintoma", "C) Clinico (adjetivo)"],
-        correct: 1,
-        explanation: "Retroalimentación: La palabra 'síntoma' lleva su acento prosódico en la antepenúltima sílaba (sín-to-ma). Todas las palabras esdrújulas se acentúan gráficamente sin excepción."
-    },
-
-    // =========================================================================
-    // ÁREA: PREMEDICINA (ANATOMÍA Y FISIOLOGÍA PATOLÓGICA FINAL)
-    // =========================================================================
-    {
-        q: "¿Cuál es la porción inicial del intestino delgado, con forma de 'C', que recibe el quimo gástrico y los jugos digestivos del páncreas y la vesícula biliar?",
-        options: ["A) Yeyuno", "B) Duodeno", "C) Íleon"],
-        correct: 1,
-        explanation: "Retroalimentación: El duodeno es el primer segmento del intestino delgado. Es el sitio principal para la digestión química de grasas, proteínas y carbohidratos mediante las secreciones hepatopancreáticas."
-    },
-    {
-        q: "¿Qué hormona es secretada por las células beta de los islotes de Langerhans en el páncreas para disminuir las concentraciones plasmáticas de glucosa?",
+        q: "¿Qué hormona es secretada por las células beta de los islotes de Langerhans en el páncreas para disminuir los niveles de glucosa en el torrente sanguíneo?",
         options: ["A) Glucagón", "B) Insulina", "C) Somatostatina"],
         correct: 1,
-        explanation: "Retroalimentación: La insulina es una hormona hipoglucemiante que facilita la entrada de glucosa a las células (principalmente musculares y adipocitos) y estimula la glucogenogénesis."
+        explanation: "Retroalimentación: La insulina favorece la incorporación de glucosa de la sangre a los tejidos. El glucagón (células alfa) tiene el efecto contrario: es hiperglucemiante."
     },
     {
-        q: "Un estudio epidemiológico analiza a un grupo de personas sanas expuestas a un factor de riesgo y las sigue a lo largo del tiempo para observar quiénes desarrollan una enfermedad. ¿Qué tipo de diseño es?",
-        options: ["A) Estudio de cohortes", "B) Estudio de casos y controles", "C) Estudio transversal"],
+        q: "¿Cuál es el tipo de tejido epitelial que recubre internamente los vasos sanguíneos (endotelio) y los alvéolos pulmonares, facilitando la difusión pasiva de gases y nutrientes?",
+        options: ["A) Epitelio plano simple", "B) Epitelio cúbico estratificado", "C) Epitelio cilíndrico seudoestratificado"],
         correct: 0,
-        explanation: "Retroalimentación: Los estudios de cohortes son observacionales y analíticos con direccionalidad anterógrada (prospectiva), partiendo de la exposición para evaluar la incidencia de la enfermedad."
+        explanation: "Retroalimentación: El epitelio plano simple está constituido por una sola capa de células delgadas, ideal para zonas que requieren filtración o difusión rápida."
     },
     {
-        q: "¿Qué componente estructural posee un virus que consiste en una cubierta proteica encargada de proteger su material genético (ADN o ARN)?",
-        options: ["A) Cápside", "B) Envoltura lipídica", "C) Prión"],
-        correct: 0,
-        explanation: "Retroalimentación: La cápside es la estructura formada por capsómeros (proteínas) que aloja y protege el genoma vírico de la degradación ambiental."
+        q: "En la tríada ecológica de la salud pública, ¿cómo se define al elemento animado o inanimado cuya presencia o ausencia constitucional es capaz de desencadenar una enfermedad?",
+        options: ["A) Huésped", "B) Medio ambiente", "C) Agente causal"],
+        correct: 2,
+        explanation: "Retroalimentación: El agente es el microorganismo, sustancia química o factor físico indispensable para el desarrollo de una enfermedad."
     },
     {
-        q: "Si cruzamos dos plantas de chícharos heterocigotas (Aa) para el color de la semilla, de acuerdo con la Primera Ley de Mendel, ¿cuál es la probabilidad genotípica de obtener un individuo homocigoto recesivo (aa)?",
-        options: ["A) 25%", "B) 50%", "C) 75%"],
-        correct: 0,
-        explanation: "Retroalimentación: Al realizar la cruza en el cuadro de Punnett (Aa x Aa), obtenemos: 25% AA, 50% Aa y 25% aa. La probabilidad de homocigotos recesivos es de 1 de 4, es decir, el 25%."
+        q: "¿Cuál es el mecanismo de transporte de membrana celular que utiliza energía en forma de ATP para movilizar iones en contra de su gradiente de concentración?",
+        options: ["A) Difusión facilitada", "B) Ósmosis", "C) Transporte activo primario"],
+        correct: 2,
+        explanation: "Retroalimentación: El transporte activo requiere energía celular (ATP) debido a que mueve solutos cuesta arriba (en contra de sus gradientes de concentración)."
     },
     {
-        q: "¿Qué subdivisión del sistema nervioso autónomo se activa predominantemente durante situaciones de estrés, peligro o emergencia, provocando midriasis, taquicardia y broncodilatación?",
-        options: ["A) Sistema nervioso simpático", "B) Sistema nervioso parasimpático", "C) Sistema nervioso somático"],
-        correct: 0,
-        explanation: "Retroalimentación: El sistema nervioso simpático prepara al organismo para respuestas de 'lucha o huida' mediante la liberación de catecolaminas (adrenalina y noradrenalina)."
-    },
-    {
-        q: "¿En qué región o compartimento subcelular específico se llevan a cabo las reacciones enzimáticas del Ciclo de Krebs (Ciclo del Ácido Cítrico)?",
-        options: ["A) Citoplasma celular", "B) Matriz mitocondrial", "C) Crestas mitocondriales"],
+        q: "¿Qué sección del tubo digestivo humano absorbe la mayor proporción de nutrientes obtenidos durante el proceso de la digestión?",
+        options: ["A) Estómago", "B) Intestino delgado", "C) Intestino grueso"],
         correct: 1,
-        explanation: "Retroalimentación: El Ciclo de Krebs ocurre en la matriz mitocondrial de las células eucariotas. La cadena de transporte de electrones y la fosforilación oxidativa se realizan en las crestas."
+        explanation: "Retroalimentación: Gracias a las microvellosidades, el intestino delgado (duodeno, yeyuno e íleon) es el sitio principal de absorción de nutrientes."
     },
     {
-        q: "¿Qué tipo de tejido muscular carece de estrías visibles bajo el microscopio, posee células fusiformes con un solo núcleo central y su contracción es lenta e involuntaria?",
-        options: ["A) Tejido muscular esquelético", "B) Tejido muscular liso", "C) Tejido muscular cardíaco"],
+        q: "Tipo de inmunidad que adquiere un recién nacido al recibir anticuerpos IgG preformados de la madre a través de la placenta.",
+        options: ["A) Inmunidad activa artificial", "B) Inmunidad pasiva natural", "C) Inmunidad activa natural"],
         correct: 1,
-        explanation: "Retroalimentación: El músculo liso no presenta sarcómeros organizados (por eso carece de estrías). Se localiza en las paredes de las vísceras huecas y vasos sanguíneos bajo control autónomo."
+        explanation: "Retroalimentación: Es pasiva porque el organismo no fabrica los anticuerpos (los recibe hechos) y es natural porque ocurre por un proceso biológico natural (placenta/lactancia)."
+    },
+
+    // =========================================================================
+    // MÓDULO: PENSAMIENTO MATEMÁTICO
+    // =========================================================================
+    {
+        q: "Dada la siguiente serie de datos clínicos correspondientes a las frecuencias cardíacas de 5 pacientes: 72, 80, 75, 72, 85. Calcule el valor de la mediana.",
+        options: ["A) 72", "B) 75", "C) 76.8"],
+        correct: 1,
+        explanation: "Retroalimentación: Ordenando los datos de menor a mayor: 72, 72, 75, 80, 85. El valor central (mediana) que divide el conjunto exactamente a la mitad es 75."
     },
     {
-        q: "¿Cuál se considera el rango fisiológico normal del potencial de hidrógeno (pH) en la sangre arterial humana en condiciones homeostáticas?",
-        options: ["A) 7.35 a 7.45", "B) 7.00 a 7.15", "C) 7.50 a 7.65"],
+        q: "Resuelva el siguiente sistema de ecuaciones lineales para encontrar el valor numérico de 'x':\n2x + 3y = 12\nx - y = 1",
+        options: ["A) x = 3", "B) x = 2", "C) x = 1"],
         correct: 0,
-        explanation: "Retroalimentación: El pH de la sangre arterial se mantiene estrictamente regulado entre 7.35 y 7.45 gracias a los sistemas amortiguadores corporales (bicarbonato/ácido carbónico) y la compensación renal y respiratoria."
+        explanation: "Retroalimentación: De la segunda ecuación y = x - 1. Sustituyendo en la primera: 2x + 3(x - 1) = 12 -> 2x + 3x - 3 = 12 -> 5x = 15 -> x = 3."
+    },
+    {
+        q: "Un consultorio reporta que el 60% de sus pacientes totales padecen hipertensión. Si se seleccionan 2 pacientes de forma consecutiva y con reemplazo, ¿cuál es la probabilidad de que AMBOS sean hipertensos?",
+        options: ["A) 0.60", "B) 0.36", "C) 1.20"],
+        correct: 1,
+        explanation: "Retroalimentación: Al ser eventos independientes con reemplazo, se multiplican sus probabilidades individuales: 0.60 * 0.60 = 0.36 (o 36%)."
+    },
+    {
+        q: "¿Cuál es el valor simplificado de la siguiente expresión con exponentes exponenciales? (2³ * 2² ) / 2⁴",
+        options: ["A) 2", "B) 4", "C) 1"],
+        correct: 0,
+        explanation: "Retroalimentación: Leyes de los exponentes: en el numerador se suman (3 + 2 = 5), quedando 2⁵. Al dividir, se restan los exponentes (5 - 4 = 1), lo que da como resultado 2¹ = 2."
+    },
+    {
+        q: "Si un triángulo rectángulo presenta un cateto opuesto de 3 cm y un cateto adyacente de 4 cm con respecto a un ángulo alfa, ¿cuál es el valor de la función trigonométrica Seno de alfa?",
+        options: ["A) 3/4", "B) 4/5", "C) 3/5"],
+        correct: 2,
+        explanation: "Retroalimentación: Por teorema de Pitágoras, la hipotenusa mide √(3² + 4²) = 5 cm. La función Seno se define como Cateto Opuesto / Hipotenusa, dando 3/5."
+    },
+    {
+        q: "Determine la ecuación de la recta que intersecta al eje de las ordenadas (y) en el punto (0, 5) y ostenta una pendiente igual a -2.",
+        options: ["A) y = 5x - 2", "B) y = -2x + 5", "C) y = -2x - 5"],
+        correct: 1,
+        explanation: "Retroalimentación: Aplicando la ecuación de la recta ordinaria (y = mx + b), donde m es la pendiente (-2) y b es la intersección en y (5): y = -2x + 5."
+    },
+    {
+        q: "Un lote epidemiológico de vacunas contiene 150 unidades. Se determina que el 4% sufrieron defectos de refrigeración. ¿Cuántas vacunas utilizables quedan en el lote?",
+        options: ["A) 144", "B) 146", "C) 6"],
+        correct: 0,
+        explanation: "Retroalimentación: El 4% de 150 es (150 * 0.04) = 6 vacunas defectuosas. Restando las dañadas al total: 150 - 6 = 144 vacunas óptimas."
+    },
+
+    // =========================================================================
+    // MÓDULO: COMPRESIÓN LECTORA
+    // =========================================================================
+    {
+        passage: "TEXTO A: El método científico no es una estructura rígida de pasos inalterables, sino un marco conceptual elástico y riguroso. Su objetivo prioritario radica en minimizar la subjetividad del investigador y someter las hipótesis a pruebas empíricas replicables. En las ciencias biológicas y médicas, este rigor es vital, puesto que las conclusiones derivadas impactan de forma directa sobre tratamientos clínicos que comprometen la salud de poblaciones humanas. Omitir el control de variables equivale a invalidar el conocimiento.",
+        q: "A partir del Texto A, identifique cuál es la intención primordial que persigue el autor del fragmento.",
+        options: ["A) Describir detalladamente el orden cronológico de los pasos del método.", "B) Argumentar sobre la importancia del rigor epistemológico en la investigación médica.", "C) Criticar los presupuestos económicos que financian los laboratorios clínicos."],
+        correct: 1,
+        explanation: "Retroalimentación: El autor defiende la rigurosidad y la objetividad del método científico enfocado en el campo de la medicina biológica, rechazando la subjetividad."
+    },
+    {
+        passage: "TEXTO A: El método científico no es una estructura rígida de pasos inalterables, sino un marco conceptual elástico y riguroso. Su objetivo prioritario radica en minimizar la subjetividad del investigador y someter las hipótesis a pruebas empíricas replicables. En las ciencias biológicas y médicas, este rigor es vital, puesto que las conclusiones derivadas impactan de forma directa sobre tratamientos clínicos que comprometen la salud de poblaciones humanas. Omitir el control de variables equivale a invalidar el conocimiento.",
+        q: "¿Qué significado adquiere el vocablo 'replicables' dentro del contexto de la lectura anterior?",
+        options: ["A) Que las pruebas pueden ser criticadas y refutadas teóricamente.", "B) Que los experimentos pueden ser reproducidos de igual forma por otros científicos.", "C) Que los resultados son ambiguos y se prestan a dobles interpretaciones."],
+        correct: 1,
+        explanation: "Retroalimentación: En el ámbito científico, la replicabilidad denota la capacidad de reproducir un estudio de manera idéntica para corroborar sus hallazgos."
+    },
+    {
+        passage: "TEXTO B: Los virus no se consideran seres vivos en sentido estricto, dado que carecen de metabolismo propio e independencia replicativa. Son agregados moleculares complejos formados por ácidos nucleicos encapsulados en proteínas. Para perpetuarse, requieren secuestrar la maquinaria bioquímica de una célula hospedadora viva. Este parasitismo genético absoluto difumina la frontera entre la materia orgánica inanimada y la vida.",
+        q: "Seleccione la conclusión sintética que derive directamente de las premisas expuestas en el Texto B.",
+        options: ["A) Las bacterias y los virus poseen la misma complejidad estructural.", "B) La condición de parásitos obligados de los virus se debe a su falta de metabolismo propio.", "C) Todos los virus mutan con mayor velocidad que las células hospederas."],
+        correct: 1,
+        explanation: "Retroalimentación: El texto afirma que al no tener metabolismo ni independencia, necesitan estrictamente secuestrar otra maquinaria celular para sobrevivir."
+    },
+
+    // =========================================================================
+    // MÓDULO: REDACCIÓN INDIRECTA
+    // =========================================================================
+    {
+        q: "Complete la siguiente oración utilizando los conectores gramaticales de concordancia adecuados:\nEl equipo de investigadores ________ de prisa al laboratorio, ________ el director general aún no autorizaba el protocolo.",
+        options: ["A) entró - sin embargo", "B) entraron - no obstante", "C) ingresó - por lo tanto"],
+        correct: 0,
+        explanation: "Retroalimentación: 'El equipo' requiere verbo singular ('entró'). El conector adverso 'sin embargo' introduce una oposición lógica válida con la segunda premisa."
+    },
+    {
+        q: "Elija la opción gramatical que evidencie un uso IMPECABLE de los signos de puntuación (puntos, comas, punto y coma).",
+        options: ["A) Los síntomas del paciente eran: fiebre alta, cefalea y tos; sin embargo, dio negativo a la prueba.", "B) Los síntomas, del paciente eran fiebre alta fiebre, y tos sin embargo dio negativo.", "C) Los síntomas del paciente, eran fiebre alta, cefalea, y tos; sin embargo dio negativo."],
+        correct: 0,
+        explanation: "Retroalimentación: La primera opción estructura adecuadamente los elements enumerados, introduce punto y coma antes del conector discursivo largo ('sin embargo') y separa la frase con la coma correspondiente."
+    },
+    {
+        q: "Identifique cuál palabra está correctamente escrita respetando las reglas ortográficas del español.",
+        options: ["A) Exhumar", "B) Exumar", "C) Ezumar"],
+        correct: 0,
+        explanation: "Retroalimentación: El verbo 'exhumar' (desenterrar un cadáver) proviene del latín 'humus' (tierra), por lo que conserva la 'h' intermedia y la estructura gráfica con 'x'."
+    },
+    {
+        q: "Seleccione la opción que contenga un error de redundancia o vicio del lenguaje (pleonasmo).",
+        options: ["A) El médico cirujano extrajo el tumor maligno.", "B) El paciente sufrió una hemorragia de sangre profusa.", "C) Se analizaron las muestras biológicas en el laboratorio."],
+        correct: 1,
+        explanation: "Retroalimentación: La frase 'hemorragia de sangre' constituye un pleonasmo craso, puesto que por definición médica toda hemorragia es una pérdida o flujo de sangre."
+    },
+    {
+        q: "Identifique el enunciado que cumple rigurosamente con la concordancia de género y número.",
+        options: ["A) El diagnóstico y el tratamiento prescrito fueron excelentes.", "B) El diagnóstico y el tratamiento prescrita fueron excelentes.", "C) El diagnóstico y el tratamiento prescritos fueron excelente."],
+        correct: 0,
+        explanation: "Retroalimentación: Al calificar a dos sustantivos masculinos singulares coordinados ('el diagnóstico y el tratamiento'), el adjetivo compuesto debe ir en masculino plural ('prescritos' o el verbo compuesto 'fueron excelentes'). La opción A mantiene la simetría perfecta."
     }
 ];
 
